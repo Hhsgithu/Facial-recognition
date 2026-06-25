@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ManageWin</class>
+ <widget class="QWidget" name="ManageWin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>数据管理</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="userTab">
+      <attribute name="title">
+       <string>用户管理</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="userTabLayout">
+       <item>
+        <layout class="QHBoxLayout" name="userBtnLayout">
+         <item>
+          <widget class="QPushButton" name="refreshUserBtn">
+           <property name="text">
+            <string>刷新</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="deleteUserBtn">
+           <property name="text">
+            <string>删除选中</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="userHorizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTableView" name="userTableView">
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="recordTab">
+      <attribute name="title">
+       <string>识别记录</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="recordTabLayout">
+       <item>
+        <layout class="QHBoxLayout" name="recordBtnLayout">
+         <item>
+          <widget class="QPushButton" name="refreshRecordBtn">
+           <property name="text">
+            <string>刷新</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="deleteRecordBtn">
+           <property name="text">
+            <string>删除选中</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="clearRecordsBtn">
+           <property name="text">
+            <string>清空全部</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="recordHorizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTableView" name="recordTableView">
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

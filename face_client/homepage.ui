@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HomePage</class>
+ <widget class="QWidget" name="HomePage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>首页</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#HomePage {
+    background-color: rgb(245, 247, 250);
+}</string>
+  </property>
+  
+  <!-- 顶部标题栏 -->
+  <widget class="QWidget" name="headerWidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+border-bottom: 1px solid rgb(230, 230, 230);</string>
+   </property>
+   <widget class="QLabel" name="titleLabel">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1024</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 22px;
+font-weight: bold;
+color: rgb(50, 50, 50);
+background: transparent;</string>
+    </property>
+    <property name="text">
+     <string>智能门禁系统</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  
+  <!-- 时间显示区域 -->
+  <widget class="QWidget" name="dateTimeWidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>60</y>
+     <width>1024</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(245, 247, 250);</string>
+   </property>
+   <widget class="QLabel" name="timeLabel">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>30</y>
+      <width>1024</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 72px;
+font-weight: bold;
+color: rgb(50, 50, 50);
+background: transparent;</string>
+    </property>
+    <property name="text">
+     <string>12:00:00</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dateLabel">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>120</y>
+      <width>512</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 18px;
+color: rgb(120, 120, 120);
+background: transparent;</string>
+    </property>
+    <property name="text">
+     <string>2024年01月01日</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="weekLabel">
+    <property name="geometry">
+     <rect>
+      <x>522</x>
+      <y>120</y>
+      <width>200</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 18px;
+color: rgb(120, 120, 120);
+background: transparent;</string>
+    </property>
+    <property name="text">
+     <string>星期一</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+  </widget>
+  
+  <!-- 功能按钮区域 -->
+  <widget class="QWidget" name="buttonWidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>260</y>
+     <width>1024</width>
+     <height>340</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(245, 247, 250);</string>
+   </property>
+   
+   <widget class="QPushButton" name="faceRecognitionBtn">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>30</y>
+      <width>200</width>
+      <height>120</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(50, 50, 50);
+}
+QPushButton:pressed {
+    background-color: rgb(240, 240, 240);
+}</string>
+    </property>
+    <property name="text">
+     <string>人脸识别</string>
+    </property>
+   </widget>
+   
+   <widget class="QPushButton" name="passwordUnlockBtn">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>30</y>
+      <width>200</width>
+      <height>120</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(50, 50, 50);
+}
+QPushButton:pressed {
+    background-color: rgb(240, 240, 240);
+}</string>
+    </property>
+    <property name="text">
+     <string>密码解锁</string>
+    </property>
+   </widget>
+   
+   <widget class="QPushButton" name="fingerprintUnlockBtn">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>30</y>
+      <width>200</width>
+      <height>120</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(50, 50, 50);
+}
+QPushButton:pressed {
+    background-color: rgb(240, 240, 240);
+}</string>
+    </property>
+    <property name="text">
+     <string>指纹解锁</string>
+    </property>
+   </widget>
+   
+   <widget class="QPushButton" name="userRegistrationBtn">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>30</y>
+      <width>200</width>
+      <height>120</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgb(24, 144, 255);
+    border: none;
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+QPushButton:pressed {
+    background-color: rgb(16, 120, 220);
+}</string>
+    </property>
+    <property name="text">
+     <string>用户注册</string>
+    </property>
+   </widget>
+   
+   <widget class="QLabel" name="tipLabel">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>170</y>
+      <width>1024</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 14px;
+color: rgb(180, 180, 180);
+background: transparent;</string>
+    </property>
+    <property name="text">
+     <string>请选择解锁方式或注册新用户</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

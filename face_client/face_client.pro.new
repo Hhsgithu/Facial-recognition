@@ -1,0 +1,138 @@
+QT       += core gui network
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+CONFIG += c++11
+
+# The following define makes your compiler emit warnings if you use
+# any Qt feature that has been marked deprecated (the exact warnings
+# depend on your compiler). Please consult the documentation of the
+# deprecated API in order to know how to port your code away from it.
+DEFINES += QT_DEPRECATED_WARNINGS
+
+# You can also make your code fail to compile if it uses deprecated APIs.
+# In order to do so, uncomment the following line.
+# You can also select to disable deprecated APIs only up to a certain version of Qt.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+
+#ubuntu
+#INCLUDEPATH += /opt/opencv3-pc/include
+#INCLUDEPATH +=/opt/opencv3-pc/include/opencv4/opencv2
+#INCLUDEPATH +=/opt/opencv3-pc/include/opencv4
+#INCLUDEPATH +=/opt/opencv3-pc/include/seeta
+#LIBS += -L/usr/lib/x86_64-linux-gun -L/opt/opencv3-pc/lib -lopencv_world -lSeetaFaceDetector -lSeetaFaceLandmarker -lSeetaFaceRecognizer -lSeetaFaceTracker -lSeetaNet -lSeetaQualityAssessor
+
+##imx6ull
+INCLUDEPATH += /opt/opencv3-arm/include
+LIBS += -L/opt/opencv3-arm/lib \
+        -lopencv_core \
+        -lopencv_highgui \
+        -lopencv_imgproc \
+        -lopencv_videoio \
+        -lopencv_imgcodecs \
+        -lopencv_objdetect \
+        -lopencv_calib3d
+
+# 3. 添加zlib动态库路径+显式链接zlib+配置rpath（关键）
+ZLIB_LIB_PATH = /usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/arm-linux-gnueabihf/sysroot/usr/lib
+LIBS += -L$ZLIB_LIB_PATH \
+        -lz \  # 显式链接zlib库
+        -Wl,-rpath=$ZLIB_LIB_PATH \  # 配置运行时zlib库路径
+        -Wl,-rpath=/opt/opencv3-arm/lib  # 配置运行时OpenCV库路径
+
+# Qt5Keyboard 包含路径
+INCLUDEPATH += qt5keyboard/include
+
+SOURCES += \
+    main.cpp \
+    homepage.cpp \
+    maincontroller.cpp \
+    passwordpage.cpp \
+    facerecognition.cpp \
+    doorsimulator.cpp \
+    fingerprintpage.cpp \
+    fingerprintcontroller.cpp \
+    servocontroller.cpp \
+    hardwarecontroller.cpp \
+    registrationkeypage.cpp \
+    userinfopage.cpp \
+    biometriccollectionpage.cpp \
+    facecapturepage.cpp \
+    fingerprintcapturepage.cpp \
+    passwordsetuppage.cpp \
+    registrationcompletepage.cpp \
+    networkmanager.cpp \
+    virtualkeyboard.cpp \
+    qt5keyboard/CandidateBar.cpp \
+    qt5keyboard/FuzzyPinyinMatcher.cpp \
+    qt5keyboard/KeyButton.cpp \
+    qt5keyboard/LayoutManager.cpp \
+    qt5keyboard/PinyinEngine.cpp \
+    qt5keyboard/SentenceInputProcessor.cpp \
+    qt5keyboard/SmartCandidateBar.cpp \
+    qt5keyboard/SmartLearningSystem.cpp \
+    qt5keyboard/SmartPinyinEngine.cpp \
+    qt5keyboard/ThemeManager.cpp \
+    qt5keyboard/VirtualKeyboard.cpp \
+    qt5keyboard/layouts/EnglishLayout.cpp \
+    qt5keyboard/layouts/NumericLayout.cpp \
+    qt5keyboard/layouts/PinyinLayout.cpp
+
+HEADERS += \
+    homepage.h \
+    maincontroller.h \
+    passwordpage.h \
+    facerecognition.h \
+    doorsimulator.h \
+    fingerprintpage.h \
+    fingerprintcontroller.h \
+    servocontroller.h \
+    hardwarecontroller.h \
+    registrationkeypage.h \
+    userinfopage.h \
+    biometriccollectionpage.h \
+    facecapturepage.h \
+    fingerprintcapturepage.h \
+    passwordsetuppage.h \
+    registrationcompletepage.h \
+    networkmanager.h \
+    virtualkeyboard.h \
+    qt5keyboard/include/CandidateBar.h \
+    qt5keyboard/include/FuzzyPinyinMatcher.h \
+    qt5keyboard/include/KeyButton.h \
+    qt5keyboard/include/LayoutManager.h \
+    qt5keyboard/include/PinyinEngine.h \
+    qt5keyboard/include/SentenceInputProcessor.h \
+    qt5keyboard/include/SmartCandidateBar.h \
+    qt5keyboard/include/SmartLearningSystem.h \
+    qt5keyboard/include/SmartPinyinEngine.h \
+    qt5keyboard/include/ThemeManager.h \
+    qt5keyboard/include/VirtualKeyboard.h \
+    qt5keyboard/include/compat.h \
+    qt5keyboard/include/version_compat.h \
+    qt5keyboard/include/ModernFeatures.h \
+    qt5keyboard/include/layouts/EnglishLayout.h \
+    qt5keyboard/include/layouts/NumericLayout.h \
+    qt5keyboard/include/layouts/PinyinLayout.h
+
+FORMS += \
+    homepage.ui \
+    passwordpage.ui \
+    facerecognition.ui \
+    fingerprintpage.ui \
+    registrationkeypage.ui \
+    userinfopage.ui \
+    facecapturepage.ui \
+    fingerprintcapturepage.ui \
+    passwordsetuppage.ui \
+    registrationcompletepage.ui
+
+# Default rules for deployment.
+qnx: target.path = /tmp/${TARGET}/bin
+else: unix:!android: target.path = /opt/${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    image.qrc
+

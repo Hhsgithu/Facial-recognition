@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoginWindow</class>
+ <widget class="QWidget" name="LoginWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>450</width>
+    <height>580</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>人脸识别管理系统</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#LoginWindow {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 rgb(102, 126, 234), stop:1 rgb(118, 75, 162));
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="leftMargin">
+    <number>40</number>
+   </property>
+   <property name="topMargin">
+    <number>30</number>
+   </property>
+   <property name="rightMargin">
+    <number>40</number>
+   </property>
+   <property name="bottomMargin">
+    <number>30</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="styleSheet">
+      <string notr="true">font-size: 28px; font-weight: bold; color: white; background: transparent; padding: 15px;</string>
+     </property>
+     <property name="text">
+      <string>人脸识别管理系统</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="styleSheet">
+      <string notr="true">QStackedWidget { background: white; border-radius: 16px; }</string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <!-- 登录页面 -->
+     <widget class="QWidget" name="loginPage">
+      <property name="styleSheet">
+       <string notr="true">background: white; border-radius: 16px;</string>
+      </property>
+      <layout class="QVBoxLayout" name="loginLayout">
+       <property name="spacing">
+        <number>15</number>
+       </property>
+       <property name="leftMargin">
+        <number>40</number>
+       </property>
+       <property name="topMargin">
+        <number>35</number>
+       </property>
+       <property name="rightMargin">
+        <number>40</number>
+       </property>
+       <property name="bottomMargin">
+        <number>25</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="loginTitle">
+         <property name="styleSheet">
+          <string notr="true">font-size: 24px; font-weight: bold; color: rgb(50, 50, 50); background: transparent; padding-bottom: 10px;</string>
+         </property>
+         <property name="text">
+          <string>管理员登录</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="loginUsername">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit { background: rgb(245, 247, 250); border: 2px solid transparent; border-radius: 12px; padding: 12px 18px; font-size: 16px; color: rgb(50, 50, 50); }
+QLineEdit:focus { border: 2px solid rgb(102, 126, 234); background: white; }
+QLineEdit:hover { background: rgb(240, 242, 245); }</string>
+         </property>
+         <property name="placeholderText">
+          <string>请输入账号</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="loginPassword">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit { background: rgb(245, 247, 250); border: 2px solid transparent; border-radius: 12px; padding: 12px 18px; font-size: 16px; color: rgb(50, 50, 50); }
+QLineEdit:focus { border: 2px solid rgb(102, 126, 234); background: white; }
+QLineEdit:hover { background: rgb(240, 242, 245); }</string>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+         <property name="placeholderText">
+          <string>请输入密码</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="loginMsgLabel">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(245, 34, 45); font-size: 14px; background: transparent;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="loginBtn">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton { background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgb(102, 126, 234), stop:1 rgb(118, 75, 162)); color: white; border: none; border-radius: 12px; font-size: 18px; font-weight: bold; }
+QPushButton:hover { background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgb(82, 106, 214), stop:1 rgb(98, 55, 142)); }
+QPushButton:pressed { background: rgb(80, 100, 200); }</string>
+         </property>
+         <property name="text">
+          <string>登 录</string>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="toRegisterBtn">
+         <property name="styleSheet">
+          <string notr="true">QPushButton { background: transparent; border: none; color: rgb(102, 126, 234); font-size: 14px; }
+QPushButton:hover { color: rgb(118, 75, 162); }</string>
+         </property>
+         <property name="text">
+          <string>没有账号？立即注册</string>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="loginSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <!-- 注册页面 -->
+     <widget class="QWidget" name="registerPage">
+      <property name="styleSheet">
+       <string notr="true">background: white; border-radius: 16px;</string>
+      </property>
+      <layout class="QVBoxLayout" name="registerLayout">
+       <property name="spacing">
+        <number>12</number>
+       </property>
+       <property name="leftMargin">
+        <number>40</number>
+       </property>
+       <property name="topMargin">
+        <number>30</number>
+       </property>
+       <property name="rightMargin">
+        <number>40</number>
+       </property>
+       <property name="bottomMargin">
+        <number>20</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="registerTitle">
+         <property name="styleSheet">
+          <string notr="true">font-size: 24px; font-weight: bold; color: rgb(50, 50, 50); background: transparent; padding-bottom: 5px;</string>
+         </property>
+         <property name="text">
+          <string>管理员注册</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="regUsername">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit { background: rgb(245, 247, 250); border: 2px solid transparent; border-radius: 12px; padding: 10px 18px; font-size: 16px; color: rgb(50, 50, 50); }
+QLineEdit:focus { border: 2px solid rgb(102, 126, 234); background: white; }
+QLineEdit:hover { background: rgb(240, 242, 245); }</string>
+         </property>
+         <property name="placeholderText">
+          <string>请输入账号</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="regPassword">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit { background: rgb(245, 247, 250); border: 2px solid transparent; border-radius: 12px; padding: 10px 18px; font-size: 16px; color: rgb(50, 50, 50); }
+QLineEdit:focus { border: 2px solid rgb(102, 126, 234); background: white; }
+QLineEdit:hover { background: rgb(240, 242, 245); }</string>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+         <property name="placeholderText">
+          <string>请输入密码</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="regConfirmPwd">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit { background: rgb(245, 247, 250); border: 2px solid transparent; border-radius: 12px; padding: 10px 18px; font-size: 16px; color: rgb(50, 50, 50); }
+QLineEdit:focus { border: 2px solid rgb(102, 126, 234); background: white; }
+QLineEdit:hover { background: rgb(240, 242, 245); }</string>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+         <property name="placeholderText">
+          <string>请确认密码</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="regKey">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit { background: rgb(245, 247, 250); border: 2px solid transparent; border-radius: 12px; padding: 10px 18px; font-size: 16px; color: rgb(50, 50, 50); }
+QLineEdit:focus { border: 2px solid rgb(102, 126, 234); background: white; }
+QLineEdit:hover { background: rgb(240, 242, 245); }</string>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+         <property name="placeholderText">
+          <string>请输入注册密钥 (Key)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="regMsgLabel">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(245, 34, 45); font-size: 14px; background: transparent;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="registerBtn">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton { background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgb(82, 196, 26), stop:1 rgb(56, 158, 13)); color: white; border: none; border-radius: 12px; font-size: 18px; font-weight: bold; }
+QPushButton:hover { background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgb(62, 176, 6), stop:1 rgb(46, 138, 3)); }
+QPushButton:pressed { background: rgb(50, 140, 10); }</string>
+         </property>
+         <property name="text">
+          <string>注 册</string>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="toLoginBtn">
+         <property name="styleSheet">
+          <string notr="true">QPushButton { background: transparent; border: none; color: rgb(102, 126, 234); font-size: 14px; }
+QPushButton:hover { color: rgb(118, 75, 162); }</string>
+         </property>
+         <property name="text">
+          <string>已有账号？返回登录</string>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="registerSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
