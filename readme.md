@@ -33,8 +33,15 @@ fr_2_10.da文件大小超50M无法上传，请自行下载到/face_server/目录
 - 开发板需要使能gpio：
   
    开发板需要使能pwm
+
+  /* SG90 舵机设备节点：绑定 PWM3 */
+hc_sg90 {
+    compatible = "hc-sg90";             
+    pwms = <&pwm3 0 20000000>;        
+    status = "okay";                  
+};
   
-  设备树：
+
   
   
   
