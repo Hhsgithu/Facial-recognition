@@ -166,6 +166,6 @@ static struct platform_driver sg90_driver = {
 module_platform_driver(sg90_driver);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Your Name");
+MODULE_AUTHOR("Hhsgithu");
 MODULE_DESCRIPTION("SG90 Servo PWM Driver for i.MX6ULL");
 MODULE_ALIAS("platform:sg90_pwm_driver");
