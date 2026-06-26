@@ -723,5 +723,5 @@ module_exit(sfm17_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("SFM-V1.7 Fingerprint Module Driver (compatible with 4.1.15 kernel)");
-MODULE_AUTHOR("hhs");
+MODULE_AUTHOR("Hhsgithu");
 MODULE_ALIAS("sfm17");
