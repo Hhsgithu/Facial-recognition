@@ -218,7 +218,7 @@ https://www.kdocs.cn/l/cbd3ostr6jkS
 
 
 
-方法二：如果在buildroot目录中有编译了qt的话在这里会有qmake，查看qmake所在的目录，在驱动源码目录下执行以下命令
+方法二：如果在buildroot目录中有编译了qt的话在这里会有qmake，查看qmake所在的目录，qmake目录下执行以下命令
 
 /home/buildroot-xxx/output/host/usr/bin/qmake  
 make -j4 将编译完成后的可执行程序xxx拷贝到开发板，./xxx执行
