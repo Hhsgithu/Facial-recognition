@@ -388,6 +388,9 @@ rmmod sg90_pwm 卸载驱动
 # 项目运行逻辑
 
 数据库设计：
+自行查看代码查看数据库，数据库中有些字段我并没有修改，请自行完善
+https://www.yuque.com/g/u64792508/hgyfn8/uq7lhnxqsyeg32lt/collaborator/join?token=Ee1F8aakQ0aINGa2&source=doc_collaborator# 《i.mx6ull-人脸识别-数据库》
+
 
 ![](C:\Users\Huafeng\AppData\Roaming\marktext\images\2026-06-24-15-26-28-image.png)
 
